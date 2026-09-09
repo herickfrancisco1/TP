@@ -59,12 +59,28 @@ def _localizar_linha_cabecalho(bruto: pd.DataFrame, limite: int = 15) -> int:
     return melhor_linha
 
 
+def _ler_csv_com_encoding(conteudo: bytes, header) -> pd.DataFrame:
+    for codificacao in ("utf-8-sig", "latin1"):
+        try:
+            return pd.read_csv(io.BytesIO(conteudo), header=header, sep=None, engine="python",
+                                encoding=codificacao)
+        except UnicodeDecodeError:
+            continue
+    return pd.read_csv(io.BytesIO(conteudo), header=header, sep=None, engine="python", encoding="latin1")
+
+
 @st.cache_data(show_spinner=False)
 def carregar_planilha(conteudo: bytes, nome_arquivo: str) -> pd.DataFrame:
-    engine = "openpyxl" if nome_arquivo.lower().endswith("xlsx") else "xlrd"
-    bruto = pd.read_excel(io.BytesIO(conteudo), header=None, engine=engine)
-    linha_cabecalho = _localizar_linha_cabecalho(bruto)
-    df = pd.read_excel(io.BytesIO(conteudo), header=linha_cabecalho, engine=engine)
+    nome = nome_arquivo.lower()
+    if nome.endswith("csv"):
+        bruto = _ler_csv_com_encoding(conteudo, header=None)
+        linha_cabecalho = _localizar_linha_cabecalho(bruto)
+        df = _ler_csv_com_encoding(conteudo, header=linha_cabecalho)
+    else:
+        engine = "openpyxl" if nome.endswith("xlsx") else "xlrd"
+        bruto = pd.read_excel(io.BytesIO(conteudo), header=None, engine=engine)
+        linha_cabecalho = _localizar_linha_cabecalho(bruto)
+        df = pd.read_excel(io.BytesIO(conteudo), header=linha_cabecalho, engine=engine)
     df = df.dropna(axis=1, how="all").dropna(axis=0, how="all")
     df.columns = [str(c).strip() for c in df.columns]
     return df.reset_index(drop=True)
@@ -110,6 +126,10 @@ def converter_para_xlsx(df: pd.DataFrame) -> bytes:
     return buffer.getvalue()
 
 
+def converter_para_csv(df: pd.DataFrame) -> bytes:
+    return df.to_csv(index=False).encode("utf-8-sig")
+
+
 # ---------------------------------------------------------------------------
 # Item 7: Color Picker - personalização de cores (persistido no Session State)
 # ---------------------------------------------------------------------------
@@ -128,7 +148,7 @@ with st.sidebar:
     st.divider()
     st.subheader("📂 Dados")
     arquivo_subido = st.file_uploader(
-        "Envie um XLS/XLSX de turismo do Data.Rio", type=["xls", "xlsx"], key="uploader_xls"
+        "Envie um CSV/XLS/XLSX de turismo do Data.Rio", type=["csv", "xls", "xlsx"], key="uploader_xls"
     )
     usar_exemplo = st.checkbox(
         "Usar dataset de exemplo (ilustrativo)", value=(arquivo_subido is None), key="chk_exemplo"
@@ -190,10 +210,10 @@ entre origens de turistas ou pontos de visitação.
     st.markdown(
         """
 **Funcionalidades implementadas neste painel:**
-1. Upload de arquivo XLS/XLSX de turismo;
+1. Upload de arquivo CSV/XLS/XLSX de turismo;
 2. Filtros por radio button, checkbox e dropdown/multiselect;
 3. Tabela interativa (ordenável e pesquisável) com os dados filtrados;
-4. Download dos dados filtrados em XLSX;
+4. Download dos dados filtrados em CSV ou XLSX;
 5. Barra de progresso e spinner durante o carregamento;
 6. Personalização de cores (color picker) do painel;
 7. Cache dos dados carregados e persistência de preferências via Session State;
@@ -237,7 +257,7 @@ if df_bruto is not None:
 df = st.session_state["df_atual"]
 
 if df is None:
-    st.warning("Envie um arquivo XLS/XLSX na barra lateral ou marque 'Usar dataset de exemplo' para começar.")
+    st.warning("Envie um arquivo CSV/XLS/XLSX na barra lateral ou marque 'Usar dataset de exemplo' para começar.")
     st.stop()
 
 colunas_numericas = df.select_dtypes(include=np.number).columns.tolist()
@@ -327,15 +347,25 @@ with aba_dados:
     st.dataframe(df_filtrado, width="stretch", height=320)
 
     # -----------------------------------------------------------------
-    # Item 5: Download dos dados filtrados
+    # Item 5: Download dos dados filtrados (CSV e XLSX)
     # -----------------------------------------------------------------
-    st.download_button(
-        "⬇️ Baixar dados filtrados (XLSX)",
-        data=converter_para_xlsx(df_filtrado),
-        file_name="turismo_rio_filtrado.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        width="stretch",
-    )
+    col_dl1, col_dl2 = st.columns(2)
+    with col_dl1:
+        st.download_button(
+            "⬇️ Baixar dados filtrados (CSV)",
+            data=converter_para_csv(df_filtrado),
+            file_name="turismo_rio_filtrado.csv",
+            mime="text/csv",
+            width="stretch",
+        )
+    with col_dl2:
+        st.download_button(
+            "⬇️ Baixar dados filtrados (XLSX)",
+            data=converter_para_xlsx(df_filtrado),
+            file_name="turismo_rio_filtrado.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            width="stretch",
+        )
 
 # ---------------------------------------------------------------------------
 # Item 12: Métricas básicas

@@ -9,8 +9,9 @@ O turismo é um dos setores econômicos mais relevantes para a cidade do Rio de
 Janeiro. O Data.Rio disponibiliza dezenas de planilhas históricas sobre chegada
 de turistas, ocupação hoteleira e visitação a pontos turísticos, mas em um
 formato bruto, pouco acessível a quem não programa. Este painel permite que
-qualquer pessoa envie uma dessas planilhas (XLS/XLSX) e obtenha, em segundos,
-filtros, tabelas interativas, gráficos e métricas — sem escrever código.
+qualquer pessoa envie uma dessas planilhas (CSV, XLS ou XLSX) e obtenha, em
+segundos, filtros, tabelas interativas, gráficos e métricas — sem escrever
+código.
 
 Datasets de referência usados como motivação (Data.Rio, categoria Turismo):
 
@@ -25,10 +26,10 @@ Datasets de referência usados como motivação (Data.Rio, categoria Turismo):
 
 ## Funcionalidades
 
-1. Upload de arquivo XLS/XLSX de turismo
+1. Upload de arquivo CSV/XLS/XLSX de turismo
 2. Filtros por radio, checkbox e dropdown/multiselect
 3. Tabela interativa (ordenável e pesquisável)
-4. Download dos dados filtrados em XLSX
+4. Download dos dados filtrados em CSV ou XLSX
 5. Barra de progresso e spinner durante o carregamento
 6. Color picker para personalizar cores do painel
 7. Cache dos dados carregados (`st.cache_data`)
