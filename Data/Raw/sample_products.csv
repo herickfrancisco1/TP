@@ -1,0 +1,121 @@
+﻿id_produto,nome_produto,categoria,marca,tipo_embalagem,embalagem_reciclavel,certificacao,nota_sustentabilidade,preco_reais,pegada_carbono_kgco2,ods_relacionado
+1,Ração Cão & Gato Sustentável #1,Ração,Cão & Gato Sustentável,Plástico reciclável,True,Selo Cruelty-Free,9.8,32.5,8.3,ODS 12 e 15
+2,Acessório Cão & Gato Sustentável #2,Acessório,Cão & Gato Sustentável,Plástico não reciclável,False,Selo ABNT Reciclável,6.2,232.32,5.54,ODS 12 e 15
+3,Higiene PetConsciente #3,Higiene,PetConsciente,Plástico não reciclável,False,Selo ABNT Reciclável,4.2,208.53,5.44,ODS 12 e 15
+4,Acessório BioRação #4,Acessório,BioRação,Vidro,True,Selo Cruelty-Free,10.0,56.61,4.07,ODS 12
+5,Higiene EcoBicho #5,Higiene,EcoBicho,Papel/Kraft,True,Certificação Vegana,10.0,88.1,3.27,ODS 12
+6,Acessório EcoBicho #6,Acessório,EcoBicho,Plástico não reciclável,False,Selo ABNT Reciclável,5.3,170.66,3.83,ODS 12 e 15
+7,Acessório Cão & Gato Sustentável #7,Acessório,Cão & Gato Sustentável,Plástico reciclável,True,Selo Cruelty-Free,10.0,102.89,2.59,ODS 12 e 15
+8,Acessório EcoBicho #8,Acessório,EcoBicho,Plástico não reciclável,False,Nenhuma,8.1,169.46,6.05,ODS 12 e 15
+9,Higiene PetConsciente #9,Higiene,PetConsciente,Plástico reciclável,True,Nenhuma,5.2,170.32,4.11,ODS 12 e 15
+10,Ração Cão & Gato Sustentável #10,Ração,Cão & Gato Sustentável,Papel/Kraft,True,Selo ABNT Reciclável,8.9,82.85,0.46,ODS 12
+11,Brinquedo Natura Animal #11,Brinquedo,Natura Animal,Plástico reciclável,True,Selo Cruelty-Free,6.8,23.89,2.54,ODS 12
+12,Higiene RaçãoViva #12,Higiene,RaçãoViva,Plástico reciclável,True,Rainforest Alliance,9.6,107.43,6.96,ODS 12
+13,Petisco Verde Pet #13,Petisco,Verde Pet,Plástico não reciclável,False,Certificação Vegana,6.8,48.61,4.36,ODS 12
+14,Higiene RaçãoViva #14,Higiene,RaçãoViva,Plástico reciclável,True,Nenhuma,6.5,161.17,3.2,ODS 12
+15,Petisco EcoBicho #15,Petisco,EcoBicho,Vidro,True,Selo Cruelty-Free,9.8,73.71,8.24,ODS 12 e 15
+16,Petisco Cão & Gato Sustentável #16,Petisco,Cão & Gato Sustentável,Plástico reciclável,True,Nenhuma,5.1,226.52,3.98,ODS 12
+17,Acessório BioRação #17,Acessório,BioRação,Plástico reciclável,True,Nenhuma,10.0,191.94,6.17,ODS 12
+18,Petisco RaçãoViva #18,Petisco,RaçãoViva,Plástico reciclável,True,Selo ABNT Reciclável,5.8,109.69,0.55,ODS 12
+19,Ração BioRação #19,Ração,BioRação,Plástico não reciclável,False,Nenhuma,6.8,50.84,7.88,ODS 12 e 15
+20,Higiene BioRação #20,Higiene,BioRação,Plástico reciclável,True,Nenhuma,10.0,125.65,6.7,ODS 12
+21,Petisco PetConsciente #21,Petisco,PetConsciente,Plástico reciclável,True,Carbono Neutro (autodeclarado),9.0,123.54,2.42,ODS 12
+22,Higiene Amiga Terra #22,Higiene,Amiga Terra,Plástico reciclável,True,Nenhuma,9.9,224.98,1.36,ODS 12 e 15
+23,Petisco EcoBicho #23,Petisco,EcoBicho,Papel/Kraft,True,Nenhuma,8.8,184.38,6.58,ODS 12
+24,Acessório Reciclapet #24,Acessório,Reciclapet,Plástico não reciclável,False,Nenhuma,6.6,98.92,7.09,ODS 12 e 15
+25,Brinquedo BioRação #25,Brinquedo,BioRação,Vidro,True,Nenhuma,7.8,71.33,7.97,ODS 12
+26,Higiene Verde Pet #26,Higiene,Verde Pet,Plástico reciclável,True,Carbono Neutro (autodeclarado),10.0,189.57,7.59,ODS 12 e 15
+27,Ração Amiga Terra #27,Ração,Amiga Terra,Plástico reciclável,True,Rainforest Alliance,9.6,99.58,0.98,ODS 12 e 15
+28,Petisco Natura Animal #28,Petisco,Natura Animal,Vidro,True,Nenhuma,5.3,209.37,1.47,ODS 12
+29,Petisco Amiga Terra #29,Petisco,Amiga Terra,Refil,True,Nenhuma,6.5,196.48,8.27,ODS 12
+30,Higiene EcoBicho #30,Higiene,EcoBicho,Plástico não reciclável,False,Nenhuma,3.9,172.54,1.21,ODS 12
+31,Brinquedo RaçãoViva #31,Brinquedo,RaçãoViva,Plástico reciclável,True,Nenhuma,9.7,181.6,6.33,ODS 12
+32,Higiene EcoBicho #32,Higiene,EcoBicho,Vidro,True,Nenhuma,6.5,127.16,5.7,ODS 15
+33,Higiene Natura Animal #33,Higiene,Natura Animal,Vidro,True,Nenhuma,8.1,162.05,1.08,ODS 12
+34,Acessório PetConsciente #34,Acessório,PetConsciente,Vidro,True,Selo ABNT Reciclável,10.0,202.95,4.08,ODS 12 e 15
+35,Brinquedo Verde Pet #35,Brinquedo,Verde Pet,Plástico não reciclável,False,Rainforest Alliance,9.0,65.73,4.61,ODS 12 e 15
+36,Brinquedo PetLove Verde #36,Brinquedo,PetLove Verde,Papel/Kraft,True,Nenhuma,6.9,112.11,5.61,ODS 12 e 15
+37,Petisco PetConsciente #37,Petisco,PetConsciente,Plástico não reciclável,False,Nenhuma,7.8,205.88,1.07,ODS 12
+38,Higiene Amiga Terra #38,Higiene,Amiga Terra,Plástico não reciclável,False,Rainforest Alliance,5.8,44.43,7.84,ODS 12
+39,Ração Natura Animal #39,Ração,Natura Animal,Plástico não reciclável,False,Nenhuma,3.1,23.19,1.65,ODS 12
+40,Higiene Amiga Terra #40,Higiene,Amiga Terra,Papel/Kraft,True,Nenhuma,6.6,130.99,7.46,ODS 12 e 15
+41,Higiene Verde Pet #41,Higiene,Verde Pet,Plástico não reciclável,False,Nenhuma,4.6,147.0,3.65,ODS 12
+42,Ração BioRação #42,Ração,BioRação,Plástico reciclável,True,Nenhuma,9.9,22.37,7.88,ODS 12
+43,Brinquedo PetLove Verde #43,Brinquedo,PetLove Verde,Refil,True,Carbono Neutro (autodeclarado),10.0,196.97,5.53,ODS 12 e 15
+44,Acessório EcoBicho #44,Acessório,EcoBicho,Plástico reciclável,True,Selo ABNT Reciclável,10.0,120.97,3.4,ODS 12 e 15
+45,Petisco Natura Animal #45,Petisco,Natura Animal,Plástico não reciclável,False,Selo ABNT Reciclável,6.5,65.72,3.25,ODS 12
+46,Acessório BioRação #46,Acessório,BioRação,Plástico reciclável,True,Certificação Vegana,7.2,237.63,7.81,ODS 12
+47,Acessório BioRação #47,Acessório,BioRação,Plástico reciclável,True,Selo Cruelty-Free,9.5,202.95,4.62,ODS 12 e 15
+48,Ração Natura Animal #48,Ração,Natura Animal,Papel/Kraft,True,Nenhuma,9.0,216.47,1.3,ODS 12 e 15
+49,Acessório Verde Pet #49,Acessório,Verde Pet,Papel/Kraft,True,Nenhuma,10.0,42.88,8.16,ODS 12 e 15
+50,Higiene Amiga Terra #50,Higiene,Amiga Terra,Papel/Kraft,True,Rainforest Alliance,10.0,70.71,5.1,ODS 12
+51,Higiene RaçãoViva #51,Higiene,RaçãoViva,Plástico não reciclável,False,Selo ABNT Reciclável,7.5,121.74,4.54,ODS 12 e 15
+52,Brinquedo Cão & Gato Sustentável #52,Brinquedo,Cão & Gato Sustentável,Plástico reciclável,True,Selo ABNT Reciclável,10.0,38.64,1.17,ODS 12
+53,Higiene RaçãoViva #53,Higiene,RaçãoViva,Plástico reciclável,True,Rainforest Alliance,9.7,89.97,7.66,ODS 12 e 15
+54,Acessório Natura Animal #54,Acessório,Natura Animal,Plástico reciclável,True,Nenhuma,5.5,45.37,7.97,ODS 12
+55,Acessório BioRação #55,Acessório,BioRação,Papel/Kraft,True,Selo ABNT Reciclável,10.0,197.17,4.18,ODS 12
+56,Acessório Reciclapet #56,Acessório,Reciclapet,Papel/Kraft,True,Carbono Neutro (autodeclarado),6.1,214.03,5.49,ODS 12
+57,Higiene Amiga Terra #57,Higiene,Amiga Terra,Papel/Kraft,True,Nenhuma,7.5,208.0,2.65,ODS 12
+58,Petisco PetConsciente #58,Petisco,PetConsciente,Plástico reciclável,True,Selo Cruelty-Free,10.0,36.44,8.48,ODS 12 e 15
+59,Acessório Natura Animal #59,Acessório,Natura Animal,Refil,True,Nenhuma,10.0,169.66,5.6,ODS 12
+60,Acessório PetLove Verde #60,Acessório,PetLove Verde,Plástico não reciclável,False,Nenhuma,3.9,196.32,1.85,ODS 15
+61,Petisco RaçãoViva #61,Petisco,RaçãoViva,Plástico não reciclável,False,Nenhuma,3.3,155.32,6.85,ODS 12
+62,Petisco PetLove Verde #62,Petisco,PetLove Verde,Plástico não reciclável,False,Rainforest Alliance,9.8,195.21,5.99,ODS 12 e 15
+63,Higiene Verde Pet #63,Higiene,Verde Pet,Plástico não reciclável,False,Nenhuma,6.3,188.75,5.43,ODS 12 e 15
+64,Higiene EcoBicho #64,Higiene,EcoBicho,Papel/Kraft,True,Nenhuma,6.3,180.28,8.34,ODS 12 e 15
+65,Higiene Verde Pet #65,Higiene,Verde Pet,Papel/Kraft,True,Nenhuma,10.0,180.2,1.64,ODS 12
+66,Acessório EcoBicho #66,Acessório,EcoBicho,Vidro,True,Selo ABNT Reciclável,10.0,162.64,4.95,ODS 12
+67,Petisco Reciclapet #67,Petisco,Reciclapet,Plástico reciclável,True,Selo ABNT Reciclável,9.8,165.72,8.01,ODS 12
+68,Higiene Amiga Terra #68,Higiene,Amiga Terra,Plástico reciclável,True,Selo ABNT Reciclável,6.1,42.08,2.51,ODS 12
+69,Acessório PetConsciente #69,Acessório,PetConsciente,Papel/Kraft,True,Selo ABNT Reciclável,8.0,108.01,2.01,ODS 12 e 15
+70,Acessório BioRação #70,Acessório,BioRação,Plástico não reciclável,False,Nenhuma,6.1,64.04,4.95,ODS 12 e 15
+71,Higiene Cão & Gato Sustentável #71,Higiene,Cão & Gato Sustentável,Papel/Kraft,True,Certificação Vegana,7.4,198.88,4.76,ODS 12
+72,Higiene RaçãoViva #72,Higiene,RaçãoViva,Plástico reciclável,True,Selo ABNT Reciclável,10.0,222.64,7.84,ODS 12
+73,Acessório Amiga Terra #73,Acessório,Amiga Terra,Papel/Kraft,True,Nenhuma,9.9,128.49,1.16,ODS 12
+74,Brinquedo PetLove Verde #74,Brinquedo,PetLove Verde,Plástico não reciclável,False,Nenhuma,5.2,51.42,2.81,ODS 12 e 15
+75,Brinquedo Verde Pet #75,Brinquedo,Verde Pet,Refil,True,Selo Cruelty-Free,7.7,46.77,5.19,ODS 12
+76,Higiene BioRação #76,Higiene,BioRação,Vidro,True,Carbono Neutro (autodeclarado),10.0,84.53,5.91,ODS 12 e 15
+77,Acessório BioRação #77,Acessório,BioRação,Papel/Kraft,True,Nenhuma,5.9,135.92,1.56,ODS 12
+78,Higiene PetLove Verde #78,Higiene,PetLove Verde,Vidro,True,Selo ABNT Reciclável,10.0,247.58,1.38,ODS 12
+79,Brinquedo BioRação #79,Brinquedo,BioRação,Plástico não reciclável,False,Rainforest Alliance,6.6,122.54,1.45,ODS 12
+80,Petisco Reciclapet #80,Petisco,Reciclapet,Plástico não reciclável,False,Nenhuma,4.9,127.55,5.07,ODS 12
+81,Ração Verde Pet #81,Ração,Verde Pet,Plástico não reciclável,False,Selo Cruelty-Free,7.9,165.7,5.76,ODS 12 e 15
+82,Acessório Verde Pet #82,Acessório,Verde Pet,Plástico reciclável,True,Selo ABNT Reciclável,7.5,212.57,4.21,ODS 12 e 15
+83,Acessório PetLove Verde #83,Acessório,PetLove Verde,Plástico reciclável,True,Selo Cruelty-Free,9.1,213.97,3.03,ODS 12
+84,Brinquedo Amiga Terra #84,Brinquedo,Amiga Terra,Plástico não reciclável,False,Nenhuma,9.0,161.3,1.67,ODS 12
+85,Petisco EcoBicho #85,Petisco,EcoBicho,Plástico não reciclável,False,Selo Cruelty-Free,6.7,83.71,5.17,ODS 12
+86,Higiene Natura Animal #86,Higiene,Natura Animal,Papel/Kraft,True,Selo ABNT Reciclável,10.0,158.79,4.16,ODS 12 e 15
+87,Acessório Reciclapet #87,Acessório,Reciclapet,Papel/Kraft,True,Carbono Neutro (autodeclarado),10.0,217.93,1.15,ODS 12 e 15
+88,Brinquedo PetConsciente #88,Brinquedo,PetConsciente,Plástico reciclável,True,Certificação Vegana,10.0,246.2,2.59,ODS 12 e 15
+89,Brinquedo Cão & Gato Sustentável #89,Brinquedo,Cão & Gato Sustentável,Plástico reciclável,True,Nenhuma,4.8,196.46,4.26,ODS 15
+90,Brinquedo PetConsciente #90,Brinquedo,PetConsciente,Vidro,True,Nenhuma,9.7,30.26,4.81,ODS 12 e 15
+91,Petisco Reciclapet #91,Petisco,Reciclapet,Refil,True,Nenhuma,6.9,21.59,1.11,ODS 12 e 15
+92,Acessório Cão & Gato Sustentável #92,Acessório,Cão & Gato Sustentável,Papel/Kraft,True,Selo Cruelty-Free,10.0,202.11,0.61,ODS 12
+93,Ração RaçãoViva #93,Ração,RaçãoViva,Refil,True,Nenhuma,7.8,172.45,0.45,ODS 12
+94,Acessório PetLove Verde #94,Acessório,PetLove Verde,Papel/Kraft,True,Nenhuma,10.0,93.43,7.28,ODS 12
+95,Acessório Amiga Terra #95,Acessório,Amiga Terra,Plástico reciclável,True,Nenhuma,10.0,54.92,0.9,ODS 12
+96,Higiene Cão & Gato Sustentável #96,Higiene,Cão & Gato Sustentável,Refil,True,Carbono Neutro (autodeclarado),7.2,107.81,1.34,ODS 12 e 15
+97,Ração Reciclapet #97,Ração,Reciclapet,Papel/Kraft,True,Selo ABNT Reciclável,7.9,229.57,4.32,ODS 12
+98,Ração BioRação #98,Ração,BioRação,Plástico não reciclável,False,Nenhuma,3.1,118.69,5.47,ODS 12
+99,Higiene PetConsciente #99,Higiene,PetConsciente,Vidro,True,Rainforest Alliance,8.8,78.19,7.65,ODS 12
+100,Higiene BioRação #100,Higiene,BioRação,Refil,True,Selo ABNT Reciclável,10.0,151.68,5.62,ODS 12
+101,Brinquedo Natura Animal #101,Brinquedo,Natura Animal,Plástico reciclável,True,Nenhuma,10.0,77.88,4.86,ODS 12 e 15
+102,Higiene Cão & Gato Sustentável #102,Higiene,Cão & Gato Sustentável,Plástico reciclável,True,Selo ABNT Reciclável,10.0,171.8,6.96,ODS 15
+103,Petisco Cão & Gato Sustentável #103,Petisco,Cão & Gato Sustentável,Plástico não reciclável,False,Selo ABNT Reciclável,4.5,166.6,8.13,ODS 12
+104,Brinquedo PetConsciente #104,Brinquedo,PetConsciente,Plástico não reciclável,False,Carbono Neutro (autodeclarado),4.5,19.76,2.24,ODS 12
+105,Brinquedo PetConsciente #105,Brinquedo,PetConsciente,Plástico reciclável,True,Nenhuma,4.8,36.68,3.39,ODS 12
+106,Brinquedo RaçãoViva #106,Brinquedo,RaçãoViva,Plástico não reciclável,False,Nenhuma,5.6,109.89,0.21,ODS 12
+107,Higiene PetLove Verde #107,Higiene,PetLove Verde,Plástico não reciclável,False,Selo ABNT Reciclável,7.0,89.84,3.78,ODS 12 e 15
+108,Higiene PetLove Verde #108,Higiene,PetLove Verde,Plástico não reciclável,False,Nenhuma,4.6,125.07,5.87,ODS 12
+109,Acessório BioRação #109,Acessório,BioRação,Vidro,True,Nenhuma,7.5,180.67,1.45,ODS 12
+110,Petisco EcoBicho #110,Petisco,EcoBicho,Refil,True,Nenhuma,5.7,17.41,1.12,ODS 12 e 15
+111,Higiene Natura Animal #111,Higiene,Natura Animal,Plástico reciclável,True,Selo ABNT Reciclável,10.0,11.04,7.28,ODS 12 e 15
+112,Higiene EcoBicho #112,Higiene,EcoBicho,Papel/Kraft,True,Selo Cruelty-Free,7.0,230.41,3.97,ODS 12 e 15
+113,Brinquedo Reciclapet #113,Brinquedo,Reciclapet,Plástico reciclável,True,Rainforest Alliance,7.4,201.71,5.19,ODS 12
+114,Higiene PetConsciente #114,Higiene,PetConsciente,Plástico reciclável,True,Nenhuma,4.7,93.05,0.36,ODS 12
+115,Acessório Cão & Gato Sustentável #115,Acessório,Cão & Gato Sustentável,Papel/Kraft,True,Certificação Vegana,7.4,223.5,5.13,ODS 12
+116,Acessório EcoBicho #116,Acessório,EcoBicho,Papel/Kraft,True,Nenhuma,7.8,247.93,0.23,ODS 12
+117,Higiene Reciclapet #117,Higiene,Reciclapet,Plástico reciclável,True,Nenhuma,10.0,221.19,4.65,ODS 12 e 15
+118,Ração Natura Animal #118,Ração,Natura Animal,Plástico não reciclável,False,Selo ABNT Reciclável,5.7,169.17,7.14,ODS 12
+119,Ração Amiga Terra #119,Ração,Amiga Terra,Plástico não reciclável,False,Selo Cruelty-Free,5.4,156.48,4.79,ODS 12
+120,Acessório RaçãoViva #120,Acessório,RaçãoViva,Papel/Kraft,True,Selo ABNT Reciclável,10.0,245.92,3.68,ODS 12

@@ -1,53 +1,102 @@
-# Painel de Turismo do Rio de Janeiro (TP3 - Streamlit)
+# 🐾 PetVerde — Consumo Consciente para o Mercado Pet
 
-Aplicação em Streamlit para explorar, filtrar, visualizar e exportar dados de
-turismo do portal [Data.Rio - grupo Turismo](https://www.data.rio/search?groupIds=729990e9fbc04c6ebf81715ab438cae8).
+Dashboard de dados a serviço de um petshop sustentável, alinhado à Agenda 2030 (ODS 12 e 15).
+
+**TP2 · Projeto de Bloco (PB)**
+**Repositório:** https://github.com/herickfrancisco1/TP
 
 ## Objetivo e motivação
 
-O turismo é um dos setores econômicos mais relevantes para a cidade do Rio de
-Janeiro. O Data.Rio disponibiliza dezenas de planilhas históricas sobre chegada
-de turistas, ocupação hoteleira e visitação a pontos turísticos, mas em um
-formato bruto, pouco acessível a quem não programa. Este painel permite que
-qualquer pessoa envie uma dessas planilhas (CSV, XLS ou XLSX) e obtenha, em
-segundos, filtros, tabelas interativas, gráficos e métricas — sem escrever
-código.
+O mercado pet brasileiro cresce rapidamente, mas esse crescimento carrega custos
+socioambientais pouco visíveis ao consumidor final: embalagens plásticas não recicláveis, alta
+pegada de carbono na cadeia produtiva de ração e uma das maiores populações de animais
+abandonados do mundo.
 
-Datasets de referência usados como motivação (Data.Rio, categoria Turismo):
+O **PetVerde** reúne dados sobre produtos pet, traduz esses dados em indicadores simples de
+sustentabilidade (ambiental e social) e extrai conteúdo público da web (notícias e artigos)
+para ajudar tutores de pets e pequenos petshops a tomar decisões de compra e gestão mais
+conscientes.
 
-- Chegada mensal de turistas pelo Rio de Janeiro, por via Aérea, segundo
-  continentes e países de residência permanente (2006-2019)
-- Taxa de ocupação média anual e mensal dos hotéis no Município do Rio de
-  Janeiro (1997-2017)
-- Número total de visitantes por mês no Parque Nacional da Tijuca, segundo
-  setores de controle (2007-2020)
-- Número total de visitantes por dia na trilha do MoNa Pão de Açúcar
-  (2017-2023)
+- **ODS 12 — Consumo e Produção Responsáveis** (primário)
+- **ODS 15 — Vida Terrestre** (secundário)
 
-## Funcionalidades
+## O que há de novo no TP2
 
-1. Upload de arquivo CSV/XLS/XLSX de turismo
-2. Filtros por radio, checkbox e dropdown/multiselect
-3. Tabela interativa (ordenável e pesquisável)
-4. Download dos dados filtrados em CSV ou XLSX
-5. Barra de progresso e spinner durante o carregamento
-6. Color picker para personalizar cores do painel
-7. Cache dos dados carregados (`st.cache_data`)
-8. Persistência de filtros e preferências via `st.session_state`
-9. Gráficos simples: barras, linhas e pizza
-10. Gráficos avançados: histograma e dispersão
-11. Métricas-resumo: contagem, soma, média e máximo
+1. **Reestruturação TDSP** completa do projeto (`app/`, `Code/`, `Data/`, `Docs/`);
+2. **Interface dinâmica** em Streamlit: abas, filtros por radio/checkbox/multiselect/slider,
+   tabela interativa e pesquisável;
+3. **Extração de conteúdo da web com Beautiful Soup**, salva em `Data/Raw/` (CSV e TXT):
+   - notícias reais sobre consumo consciente pet e sustentabilidade (Google Notícias);
+   - artigos da Wikipedia sobre consumo sustentável e abandono de animais;
+4. **Nuvem de palavras** e estatísticas básicas de texto geradas a partir do conteúdo coletado;
+5. **Cache** (`st.cache_data`) e **estado de sessão** (`st.session_state`) para performance e
+   persistência de dados entre interações;
+6. **Upload de CSV** para o usuário complementar a base de produtos, com **download** dos
+   dados filtrados em CSV ou XLSX;
+7. **Project Charter** e **Data Summary Report** finalizados (`Docs/Project/`,
+   `Docs/DataReport/`).
+
+## Estrutura do projeto (TDSP)
+
+```
+tp haard/
+├── app/
+│   └── app.py                  # Aplicação Streamlit (Deployment)
+├── Code/
+│   ├── DataAcquisition/        # Scripts de coleta (mock + scraping com Beautiful Soup)
+│   ├── DataPreparation/        # Limpeza e tratamento dos dados
+│   ├── Modeling/                # Indicadores e prompts de LLM — próxima etapa (TP3)
+│   └── Deployment/              # Scripts de implantação — próxima etapa (TP3/TP4)
+├── Data/
+│   ├── Raw/                     # Dados brutos (amostra de produtos, scraping)
+│   └── Processed/               # Dados tratados, prontos para o app
+├── Docs/
+│   ├── Project/                 # Project Charter
+│   ├── DataReport/              # Data Summary Report
+│   └── Model/                   # Relatórios de modelagem — próximas etapas
+├── legacy_turismo_tp3/          # Entrega de outra disciplina, mantida por histórico
+├── requirements.txt
+└── README.md
+```
 
 ## Como executar localmente
 
 ```bash
+python -m venv venv
+venv\Scripts\Activate.ps1   # Windows (PowerShell)
 pip install -r requirements.txt
-streamlit run app_tp3_herick_francisco.py
 ```
 
-Se não tiver um arquivo à mão, use o dataset de exemplo (ilustrativo) marcando
-a opção correspondente na barra lateral, ou baixe uma planilha real em
-[data.rio](https://www.data.rio/search?groupIds=729990e9fbc04c6ebf81715ab438cae8).
+(Re)coletar os dados (opcional — o repositório já inclui uma coleta em `Data/Raw/`):
+
+```bash
+python Code/DataAcquisition/gerar_dados_amostra.py
+python Code/DataAcquisition/scrape_wikipedia.py
+python Code/DataAcquisition/scrape_noticias.py
+python Code/DataPreparation/prepare_data.py
+```
+
+Rodar o dashboard:
+
+```bash
+streamlit run app/app.py
+```
+
+## Fontes de dados
+
+Ver detalhamento completo (campos, limitações e uso planejado) em
+[Docs/DataReport/data_summary_report.md](Docs/DataReport/data_summary_report.md).
+
+- Dataset de amostra (mock) de produtos pet, gerado localmente;
+- Artigos da Wikipedia (Consumo sustentável; Abandono de animais), coletados via Beautiful Soup;
+- Notícias públicas (Google Notícias) sobre consumo consciente pet e sustentabilidade,
+  coletadas via Beautiful Soup;
+- Planejadas para o TP3: Open Pet Food Facts (API), IBGE/SIDRA (API), LLM via API.
+
+## Documentação do projeto
+
+- [Project Charter](Docs/Project/project_charter.md)
+- [Data Summary Report](Docs/DataReport/data_summary_report.md)
 
 ## Autor
 
@@ -55,6 +104,5 @@ Herick Francisco
 
 ## Uso de IA
 
-Este projeto foi desenvolvido com apoio de IA (Claude, da Anthropic) para
-estruturação e implementação do código, conforme a política de Sinal Verde
-do curso.
+Este projeto foi desenvolvido com apoio de IA (Claude, da Anthropic) para estruturação e
+implementação do código, conforme a política de Sinal Verde do curso.
