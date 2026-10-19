@@ -1,4 +1,5 @@
 # Model
 
-Reservado para a próxima etapa (TP3): relatórios de avaliação dos indicadores de
-sustentabilidade e das recomendações geradas via LLM.
+- [plano_llm.md](plano_llm.md) — TP3: inventário dos dados, tarefas planejadas com LLM (resumo,
+  sentimento, perguntas e respostas, relatórios), arquitetura e riscos.
+- TP4 (próxima etapa): relatórios de avaliação das respostas geradas pelo LLM.

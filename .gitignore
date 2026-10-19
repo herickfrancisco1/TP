@@ -4,3 +4,6 @@ __pycache__/
 .streamlit/
 venv/
 .venv/
+.pytest_cache/
+# Produtos cadastrados pela API durante testes manuais (remova esta linha se quiser versioná-los)
+Data/Processed/produtos_enviados_api.csv
