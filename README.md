@@ -74,47 +74,96 @@ TP/
 └── README.md
 ```
 
-## Como executar localmente
+## Como executar
 
-Requisitos: Python 3.10+ e, para o Selenium, o Google Chrome instalado.
+Requisitos: **Python 3.10 ou mais recente** e **Git**. Para a coleta com Selenium (opcional),
+também é preciso ter o **Google Chrome** instalado.
 
-```bash
+Os comandos abaixo são para o **PowerShell (Windows)**. No Linux/Mac, veja a observação em cada
+passo.
+
+### 1. Baixar o projeto e criar o ambiente virtual
+
+```powershell
+git clone https://github.com/herickfrancisco1/TP.git
+cd TP
 python -m venv venv
-venv\Scripts\Activate.ps1   # Windows (PowerShell)  |  source venv/bin/activate (Linux/Mac)
-pip install -r requirements.txt
+venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-**1. (Opcional) Recoletar os dados** — o repositório já inclui uma coleta em `Data/`:
+- Linux/Mac: ative o ambiente com `source venv/bin/activate`.
+- Se o PowerShell bloquear o `Activate.ps1` ("execução de scripts foi desabilitada"), rode uma
+  vez `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` e ative de novo.
+- Com o ambiente ativado, o terminal mostra `(venv)` no início da linha. **Ative o ambiente em
+  todo terminal novo** antes de rodar os comandos dos próximos passos.
 
-```bash
+### 2. Rodar os testes da API
+
+```powershell
+python -m pytest -v
+```
+
+O resultado esperado é `10 passed`. Os testes usam uma cópia temporária da pasta `Data/`, então
+não alteram os arquivos do repositório.
+
+### 3. Subir a API (terminal 1)
+
+Na pasta raiz do projeto, com o ambiente ativado:
+
+```powershell
+python -m uvicorn Code.Deployment.api:app --reload
+```
+
+Deixe esse terminal aberto. A API fica em <http://127.0.0.1:8000>. A documentação interativa,
+onde dá para testar cada rota com o botão **Try it out**, fica em
+<http://127.0.0.1:8000/docs>.
+
+### 4. Abrir o dashboard (terminal 2)
+
+Abra **outro** terminal, entre na pasta do projeto, ative o ambiente (`venv\Scripts\Activate.ps1`)
+e rode:
+
+```powershell
+python -m streamlit run app/app.py
+```
+
+O navegador abre em <http://localhost:8501>. Use o **menu lateral** para trocar de página. A
+página **🔌 API PetVerde** só funciona com a API do passo 3 ligada; as outras páginas funcionam
+mesmo sem ela.
+
+Para encerrar a API ou o dashboard, pressione `Ctrl + C` no terminal correspondente.
+
+### 5. (Opcional) Recoletar e preparar os dados
+
+O repositório já traz os dados prontos em `Data/`. Para coletar tudo de novo (precisa de
+internet), rode na ordem, com o ambiente ativado:
+
+```powershell
 python Code/DataAcquisition/gerar_dados_amostra.py
 python Code/DataAcquisition/scrape_wikipedia.py
 python Code/DataAcquisition/scrape_noticias.py
-python Code/DataAcquisition/scrape_noticias_selenium.py      # páginas dinâmicas (Chrome)
-python Code/DataAcquisition/coletar_openpetfoodfacts.py     # produtos reais (API)
+python Code/DataAcquisition/scrape_noticias_selenium.py     # páginas dinâmicas (usa o Chrome)
+python Code/DataAcquisition/coletar_openpetfoodfacts.py    # produtos reais (API, leva ~1 min)
 python Code/DataPreparation/prepare_data.py
 python Code/Modeling/preparar_corpus_llm.py
 ```
 
-**2. Subir a API** (terminal 1):
+- `scrape_noticias_selenium.py --limite 10` visita só 10 notícias, o que é útil para um teste
+  rápido. Com `--mostrar-navegador`, a janela do Chrome fica visível.
+- Depois de recoletar, reinicie o Streamlit (ou use **Clear cache** no menu ⋮ do canto superior
+  direito) para ver os dados novos.
 
-```bash
-uvicorn Code.Deployment.api:app --reload
-```
+### Problemas comuns
 
-Documentação interativa: <http://127.0.0.1:8000/docs>
-
-**3. Rodar o dashboard** (terminal 2):
-
-```bash
-streamlit run app/app.py
-```
-
-**4. Rodar os testes da API:**
-
-```bash
-pytest -v
-```
+| Sintoma | Solução |
+|---|---|
+| `streamlit`, `uvicorn` ou `pytest` "não é reconhecido como comando" | O ambiente não está ativado. Rode `venv\Scripts\Activate.ps1` ou use a forma `python -m ...` dos comandos acima |
+| `ModuleNotFoundError` ao rodar algum script | Rode os comandos a partir da **pasta raiz** do projeto (onde está o `README.md`) e confira se o ambiente está ativado |
+| Página **API PetVerde** mostra "A API não está respondendo" | Suba a API (passo 3) em outro terminal e clique em **Testar conexão** |
+| `[Errno 10048]` ou "address already in use" ao subir a API | A porta 8000 já está em uso. Feche o outro terminal da API ou rode com `--port 8001` e defina `$env:PETVERDE_API_URL="http://127.0.0.1:8001"` antes de abrir o Streamlit |
+| Selenium falha ao abrir o navegador | Instale o Google Chrome. O Selenium 4 baixa o driver sozinho na primeira execução (precisa de internet) |
+| Abas "Produtos reais" ou "Com descrição (Selenium)" vazias | Esses dados vêm da coleta opcional (passo 5). Rode os scripts e depois `prepare_data.py` |
 
 ## Fontes de dados
 

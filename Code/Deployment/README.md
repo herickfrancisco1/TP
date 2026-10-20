@@ -10,21 +10,21 @@
 Na raiz do repositório, com o ambiente virtual ativado:
 
 ```bash
-uvicorn Code.Deployment.api:app --reload
+python -m uvicorn Code.Deployment.api:app --reload
 ```
 
 - API: <http://127.0.0.1:8000>
 - Documentação interativa (Swagger, permite testar as rotas pelo navegador): <http://127.0.0.1:8000/docs>
 - Documentação alternativa (ReDoc): <http://127.0.0.1:8000/redoc>
 
-Com a API ligada, rode o Streamlit em **outro terminal** (`streamlit run app/app.py`) e abra a
+Com a API ligada, rode o Streamlit em **outro terminal** (`python -m streamlit run app/app.py`) e abra a
 página **🔌 API PetVerde**, que consome as rotas abaixo. Para apontar o app para outro endereço,
 defina `PETVERDE_API_URL` (padrão `http://127.0.0.1:8000`).
 
 Testes automatizados (não alteram os dados do repositório — usam uma cópia temporária):
 
 ```bash
-pytest -v
+python -m pytest -v
 ```
 
 ## Rotas
